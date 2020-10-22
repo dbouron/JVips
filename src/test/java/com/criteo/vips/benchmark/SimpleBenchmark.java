@@ -16,7 +16,7 @@
 
 package com.criteo.vips.benchmark;
 import com.criteo.vips.PixelPacket;
-import com.criteo.vips.VipsContext;
+import com.criteo.vips.VipsCache;
 import com.criteo.vips.VipsImage;
 import com.criteo.vips.enums.VipsCompassDirection;
 import com.criteo.vips.enums.VipsImageFormat;
@@ -75,7 +75,8 @@ public class SimpleBenchmark {
             jpegContent = Files.readAllBytes(new File(jpegPath).toPath());
             pngContent = Files.readAllBytes(new File(pngPath).toPath());
 
-            VipsContext.setMaxCache(0);
+            VipsCache.setMax(0);
+            VipsCache.setMaxMem(0);
         }
     }
 

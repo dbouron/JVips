@@ -108,8 +108,8 @@ public class VipsImageTest {
 
     public static void onceExecutedBeforeAll() {
         VipsInit.leakSet(true);
-        VipsContext.setMaxCache(0);
-        VipsContext.setMaxCacheMem(0);
+        VipsCache.setMax(0);
+        VipsCache.setMaxMem(0);
     }
 
     @Rule

@@ -1,4 +1,4 @@
-/*setLeak
+/*
   Copyright (c) 2019 Criteo
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,17 +25,5 @@ public class VipsContextTest {
     public void TestSetConcurrency() {
         VipsContext.setConcurrency(8);
         Assert.assertEquals(8, VipsContext.getConcurrency());
-    }
-
-    @Test
-    public void TestSetMaxCache() {
-        VipsContext.setMaxCache(0);
-        Assert.assertEquals(0, VipsContext.getMaxCache());
-    }
-
-    @Test
-    public void TestSetMaxCacheMem() {
-        VipsContext.setMaxCacheMem(1024);
-        Assert.assertEquals(1024, VipsContext.getMaxCacheMem());
     }
 }

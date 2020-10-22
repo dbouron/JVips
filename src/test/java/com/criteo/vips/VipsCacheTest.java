@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019 Criteo
+  Copyright (c) 2020 Criteo
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -16,18 +16,22 @@
 
 package com.criteo.vips;
 
-public class VipsContext extends Vips {
-    /**
-     * Set the number of worker threads that vips should use when running a VipsThreadPool
-     *
-     * @param concurrency 0 means "default", the number of threads available on the host machine
-     */
-    public static native void setConcurrency(int concurrency);
+import org.junit.Assert;
+import org.junit.Test;
 
-    /**
-     * Get the number of worker threads that vips should use when running a VipsThreadPool
-     *
-     * @return thread number
-     */
-    public static native int getConcurrency();
+public class VipsCacheTest {
+
+    @Test
+    public void TestSetMaxCache() {
+        int expectedOperation = 0;
+        VipsCache.setMax(expectedOperation);
+        Assert.assertEquals(expectedOperation, VipsCache.getMax());
+    }
+
+    @Test
+    public void TestSetMaxMem() {
+        long expectedMem = 1024;
+        VipsCache.setMaxMem(expectedMem);
+        Assert.assertEquals(expectedMem, VipsCache.getMaxMem());
+    }
 }

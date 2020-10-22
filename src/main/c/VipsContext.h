@@ -23,38 +23,6 @@ JNIEXPORT void JNICALL Java_com_criteo_vips_VipsContext_setConcurrency
 JNIEXPORT jint JNICALL Java_com_criteo_vips_VipsContext_getConcurrency
   (JNIEnv *, jclass);
 
-/*
- * Class:     com_criteo_vips_VipsContext
- * Method:    setMaxCache
- * Signature: (I)V
- */
-JNIEXPORT void JNICALL Java_com_criteo_vips_VipsContext_setMaxCache
-  (JNIEnv *, jclass, jint);
-
-/*
- * Class:     com_criteo_vips_VipsContext
- * Method:    getMaxCache
- * Signature: ()I
- */
-JNIEXPORT jint JNICALL Java_com_criteo_vips_VipsContext_getMaxCache
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_criteo_vips_VipsContext
- * Method:    setMaxCacheMem
- * Signature: (I)V
- */
-JNIEXPORT void JNICALL Java_com_criteo_vips_VipsContext_setMaxCacheMem
-  (JNIEnv *, jclass, jint);
-
-/*
- * Class:     com_criteo_vips_VipsContext
- * Method:    getMaxCacheMem
- * Signature: ()I
- */
-JNIEXPORT jint JNICALL Java_com_criteo_vips_VipsContext_getMaxCacheMem
-  (JNIEnv *, jclass);
-
 #ifdef __cplusplus
 }
 #endif

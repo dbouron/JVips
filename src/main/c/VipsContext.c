@@ -30,27 +30,3 @@ Java_com_criteo_vips_VipsContext_getConcurrency(__attribute__((unused))JNIEnv *e
 {
     return vips_concurrency_get();
 }
-
-JNIEXPORT void JNICALL
-Java_com_criteo_vips_VipsContext_setMaxCache(__attribute__((unused))JNIEnv *env, __attribute__((unused)) jclass obj, jint max)
-{
-    vips_cache_set_max(max);
-}
-
-JNIEXPORT jint JNICALL
-Java_com_criteo_vips_VipsContext_getMaxCache(__attribute__((unused))JNIEnv *env, __attribute__((unused)) jclass obj)
-{
-    return vips_cache_get_max();
-}
-
-JNIEXPORT void JNICALL
-Java_com_criteo_vips_VipsContext_setMaxCacheMem(__attribute__((unused))JNIEnv *env, __attribute__((unused)) jclass obj, jint max_mem)
-{
-    vips_cache_set_max_mem(max_mem);
-}
-
-JNIEXPORT jint JNICALL
-Java_com_criteo_vips_VipsContext_getMaxCacheMem(__attribute__((unused))JNIEnv *env, __attribute__((unused)) jclass obj)
-{
-    return vips_cache_get_max_mem();
-}
