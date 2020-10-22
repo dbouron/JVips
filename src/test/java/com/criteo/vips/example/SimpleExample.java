@@ -16,10 +16,7 @@
 
 package com.criteo.vips.example;
 
-import com.criteo.vips.VipsContext;
-import com.criteo.vips.VipsException;
-import com.criteo.vips.VipsImage;
-import com.criteo.vips.VipsTestUtils;
+import com.criteo.vips.*;
 import com.criteo.vips.enums.VipsImageFormat;
 
 import java.awt.*;
@@ -28,7 +25,7 @@ import java.io.IOException;
 public class SimpleExample {
     public static void main(String[] args) {
         // Set vips memory leak report at exit
-        VipsContext.setLeak(true);
+        VipsInit.leakSet(true);
         try {
             byte[] contents = VipsTestUtils.getByteArray("in_vips.jpg");
             VipsImage image = new VipsImage(contents, contents.length);

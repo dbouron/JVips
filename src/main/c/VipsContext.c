@@ -20,12 +20,6 @@
 #include "VipsContext.h"
 
 JNIEXPORT void JNICALL
-Java_com_criteo_vips_VipsContext_setLeak(__attribute__((unused))JNIEnv *env, __attribute__((unused)) jclass obj, jboolean enable)
-{
-    vips_leak_set(enable);
-}
-
-JNIEXPORT void JNICALL
 Java_com_criteo_vips_VipsContext_setConcurrency(__attribute__((unused))JNIEnv *env, __attribute__((unused)) jclass obj, jint concurrency)
 {
     vips_concurrency_set(concurrency);
@@ -59,10 +53,4 @@ JNIEXPORT jint JNICALL
 Java_com_criteo_vips_VipsContext_getMaxCacheMem(__attribute__((unused))JNIEnv *env, __attribute__((unused)) jclass obj)
 {
     return vips_cache_get_max_mem();
-}
-
-JNIEXPORT void JNICALL
-Java_com_criteo_vips_VipsContext_shutdown(__attribute__((unused)) JNIEnv *env, __attribute__((unused)) jobject obj)
-{
-    vips_shutdown();
 }

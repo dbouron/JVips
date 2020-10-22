@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019 Criteo
+  Copyright (c) 2020 Criteo
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -107,7 +107,7 @@ public class VipsImageTest {
     @BeforeClass
 
     public static void onceExecutedBeforeAll() {
-        VipsContext.setLeak(true);
+        VipsInit.leakSet(true);
         VipsContext.setMaxCache(0);
         VipsContext.setMaxCacheMem(0);
     }

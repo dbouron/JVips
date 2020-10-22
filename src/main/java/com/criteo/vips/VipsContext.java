@@ -18,13 +18,6 @@ package com.criteo.vips;
 
 public class VipsContext extends Vips {
     /**
-     * Output leak information like GObject liveness
-     *
-     * @param enable Set to True for enabling information
-     */
-    public static native void setLeak(boolean enable);
-
-    /**
      * Set the number of worker threads that vips should use when running a VipsThreadPool
      *
      * @param concurrency 0 means "default", the number of threads available on the host machine
@@ -65,9 +58,4 @@ public class VipsContext extends Vips {
      * @return maximum amound of tracked memory we use
      */
     public static native int getMaxCacheMem();
-
-    /**
-     * Shutdown vips context
-     */
-    public static native void shutdown();
 }

@@ -9,14 +9,6 @@ extern "C" {
 #endif
 /*
  * Class:     com_criteo_vips_VipsContext
- * Method:    setLeak
- * Signature: (Z)V
- */
-JNIEXPORT void JNICALL Java_com_criteo_vips_VipsContext_setLeak
-  (JNIEnv *, jclass, jboolean);
-
-/*
- * Class:     com_criteo_vips_VipsContext
  * Method:    setConcurrency
  * Signature: (I)V
  */
@@ -61,14 +53,6 @@ JNIEXPORT void JNICALL Java_com_criteo_vips_VipsContext_setMaxCacheMem
  * Signature: ()I
  */
 JNIEXPORT jint JNICALL Java_com_criteo_vips_VipsContext_getMaxCacheMem
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_criteo_vips_VipsContext
- * Method:    shutdown
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_criteo_vips_VipsContext_shutdown
   (JNIEnv *, jclass);
 
 #ifdef __cplusplus

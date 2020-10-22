@@ -1,4 +1,4 @@
-/*
+/*setLeak
   Copyright (c) 2019 Criteo
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,10 +20,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class VipsContextTest {
-    @Test
-    public void TestSetLeak() {
-        VipsContext.setLeak(true);
-    }
 
     @Test
     public void TestSetConcurrency() {

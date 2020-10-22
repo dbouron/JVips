@@ -16,10 +16,7 @@
 
 package com.criteo.vips.example;
 
-import com.criteo.vips.PixelPacket;
-import com.criteo.vips.VipsContext;
-import com.criteo.vips.VipsImage;
-import com.criteo.vips.VipsTestUtils;
+import com.criteo.vips.*;
 import com.criteo.vips.enums.VipsCompassDirection;
 import com.criteo.vips.enums.VipsImageFormat;
 
@@ -34,7 +31,7 @@ import java.util.concurrent.Executors;
 public class ExecutorServiceExample {
     public static void main(String[] args) {
         // Set vips memory leak report at exit
-        VipsContext.setLeak(true);
+        VipsInit.leakSet(true);
         try {
             final byte[] contents = VipsTestUtils.getByteArray("in_vips.jpg");
             int numCpu = 8;

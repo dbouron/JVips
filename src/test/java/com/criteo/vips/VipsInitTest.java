@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019 Criteo
+  Copyright (c) 2020 Criteo
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -14,15 +14,20 @@
   limitations under the License.
 */
 
-#include <jni.h>
-#include <vips/vips.h>
+package com.criteo.vips;
 
-#include "Vips.h"
-#include "VipsException.h"
+import org.junit.Assert;
+import org.junit.Test;
 
-JNIEXPORT void JNICALL
-Java_com_criteo_vips_Vips_init(__attribute__((unused)) JNIEnv *env, __attribute__((unused)) jobject obj)
-{
-  if (vips_init("java") < 0)
-    throwVipsException(env, "Unable to init vips");
+public class VipsInitTest {
+
+    @Test
+    public void TestVersion() {
+        // Major
+        Assert.assertEquals(8,  VipsInit.version(0));
+        // Minor
+        Assert.assertEquals(9,  VipsInit.version(1));
+        // Micro
+        Assert.assertEquals(0,  VipsInit.version(2));
+    }
 }

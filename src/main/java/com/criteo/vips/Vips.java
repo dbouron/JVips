@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019 Criteo
+  Copyright (c) 2020 Criteo
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -61,7 +61,8 @@ public class Vips {
                 LOGGER.info("Using JVips dependencies installed on system");
             LOGGER.info("Trying to load JVips");
             loadLibraryFromJar("JVips");
-            init();
+            if (VipsInit.init("JVips") < 0)
+                throw new VipsException("Unable to init vips");
         } catch (IOException e) {
             throw new RuntimeException("Can't load JVips library and/or dependencies");
         } catch (VipsException e) {
@@ -110,11 +111,4 @@ public class Vips {
         }
         System.load(temp.getAbsolutePath());
     }
-
-    /**
-     * Initialize vips context
-     *
-     * @throws VipsException
-     */
-    private static native void init() throws VipsException;
 }
