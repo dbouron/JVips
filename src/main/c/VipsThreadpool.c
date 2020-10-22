@@ -1,5 +1,5 @@
-/*
-  Copyright (c) 2019 Criteo
+ /*
+  Copyright (c) 2020 Criteo
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -17,16 +17,16 @@
 #include <jni.h>
 #include <vips/vips.h>
 
-#include "VipsContext.h"
-
 JNIEXPORT void JNICALL
-Java_com_criteo_vips_VipsContext_setConcurrency(__attribute__((unused))JNIEnv *env, __attribute__((unused)) jclass obj, jint concurrency)
+Java_com_criteo_vips_VipsThreadpool_set(__attribute__((unused)) JNIEnv *env, __attribute__((unused)) jclass obj, jint concurrency)
 {
     vips_concurrency_set(concurrency);
 }
+        
 
 JNIEXPORT jint JNICALL
-Java_com_criteo_vips_VipsContext_getConcurrency(__attribute__((unused))JNIEnv *env, __attribute__((unused)) jclass obj)
+Java_com_criteo_vips_VipsThreadpool_get(__attribute__((unused)) JNIEnv *env, __attribute__((unused)) jclass obj)
 {
     return vips_concurrency_get();
 }
+        

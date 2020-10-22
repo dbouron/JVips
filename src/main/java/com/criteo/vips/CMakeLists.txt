@@ -6,8 +6,8 @@ set(JAVA_SOURCE_FILES
     "${JAVA_SOURCE_DIRECTORY}/Max1Result.java"
     "${JAVA_SOURCE_DIRECTORY}/PixelPacket.java"
     "${JAVA_SOURCE_DIRECTORY}/Vips.java"
+    "${JAVA_SOURCE_DIRECTORY}/VipsThreadpool.java"
     "${JAVA_SOURCE_DIRECTORY}/VipsCache.java"
-    "${JAVA_SOURCE_DIRECTORY}/VipsContext.java"
     "${JAVA_SOURCE_DIRECTORY}/VipsException.java"
     "${JAVA_SOURCE_DIRECTORY}/Image.java"
     "${JAVA_SOURCE_DIRECTORY}/VipsImage.java"
@@ -20,6 +20,10 @@ file(REMOVE ${JNI_HEADER_DIRECTORY}/Vips.h
             ${JNI_HEADER_DIRECTORY}/VipsContext.h
             ${JNI_HEADER_DIRECTORY}/VipsImage.h)
 
+create_javah(TARGET VipsThreadpool_header
+             CLASSES com.criteo.vips.VipsThreadpool
+             CLASSPATH JVipsWrapper
+             OUTPUT_NAME ${JNI_HEADER_DIRECTORY}/VipsThreadpool.h)
 create_javah(TARGET VipsInit_header
              CLASSES com.criteo.vips.VipsInit
              CLASSPATH JVipsWrapper
@@ -28,10 +32,6 @@ create_javah(TARGET VipsCache_header
              CLASSES com.criteo.vips.VipsCache
              CLASSPATH JVipsWrapper
              OUTPUT_NAME ${JNI_HEADER_DIRECTORY}/VipsCache.h)
-create_javah(TARGET VipsContext_header
-             CLASSES com.criteo.vips.VipsContext
-             CLASSPATH JVipsWrapper
-             OUTPUT_NAME ${JNI_HEADER_DIRECTORY}/VipsContext.h)
 create_javah(TARGET VipsImage_header
              CLASSES com.criteo.vips.VipsImage
              CLASSPATH JVipsWrapper
@@ -42,9 +42,9 @@ create_javah(TARGET Max1Result_header
              OUTPUT_NAME ${JNI_HEADER_DIRECTORY}/Max1Result.h)
 
 if(NOT ${BUILD_TARGET} STREQUAL "macOS")
+    add_dependencies(VipsThreadpool_header libvips)
     add_dependencies(VipsInit_header libvips)
     add_dependencies(VipsCache_header libvips)
-    add_dependencies(VipsContext_header libvips)
     add_dependencies(VipsImage_header libvips)
     add_dependencies(Max1Result_header libvips)
 endif()
