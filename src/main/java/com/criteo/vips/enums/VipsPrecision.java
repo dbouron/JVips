@@ -25,10 +25,10 @@ public enum VipsPrecision {
     Approximate(2),
     Last(3);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsPrecision, Integer>();
 
-    private VipsPrecision(unsigned int i) {
+    private VipsPrecision(int i) {
       value = i;
     }
 
@@ -38,11 +38,11 @@ public enum VipsPrecision {
         }
     }
 
-    public static VipsPrecision valueOf(unsigned int i) {
+    public static VipsPrecision valueOf(int i) {
         return (VipsPrecision) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

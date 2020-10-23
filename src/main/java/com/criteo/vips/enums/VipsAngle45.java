@@ -30,10 +30,10 @@ public enum VipsAngle45 {
     D315(7),
     Last(8);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsAngle45, Integer>();
 
-    private VipsAngle45(unsigned int i) {
+    private VipsAngle45(int i) {
       value = i;
     }
 
@@ -43,11 +43,11 @@ public enum VipsAngle45 {
         }
     }
 
-    public static VipsAngle45 valueOf(unsigned int i) {
+    public static VipsAngle45 valueOf(int i) {
         return (VipsAngle45) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

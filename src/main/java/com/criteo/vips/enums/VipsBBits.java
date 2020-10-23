@@ -28,10 +28,10 @@ public enum VipsBBits {
     Double(64),
     Dpcomplex(128);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsBBits, Integer>();
 
-    private VipsBBits(unsigned int i) {
+    private VipsBBits(int i) {
       value = i;
     }
 
@@ -41,11 +41,11 @@ public enum VipsBBits {
         }
     }
 
-    public static VipsBBits valueOf(unsigned int i) {
+    public static VipsBBits valueOf(int i) {
         return (VipsBBits) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

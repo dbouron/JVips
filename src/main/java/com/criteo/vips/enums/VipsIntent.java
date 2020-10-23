@@ -26,10 +26,10 @@ public enum VipsIntent {
     Absolute(3),
     Last(4);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsIntent, Integer>();
 
-    private VipsIntent(unsigned int i) {
+    private VipsIntent(int i) {
       value = i;
     }
 
@@ -39,11 +39,11 @@ public enum VipsIntent {
         }
     }
 
-    public static VipsIntent valueOf(unsigned int i) {
+    public static VipsIntent valueOf(int i) {
         return (VipsIntent) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

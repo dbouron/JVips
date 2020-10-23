@@ -26,14 +26,12 @@ public enum VipsInteresting {
     Attention(3),
     Low(4),
     High(5),
-    // everything is interesting
-    All(6),
-    Last(7);
+    Last(6);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsInteresting, Integer>();
 
-    private VipsInteresting(unsigned int i) {
+    private VipsInteresting(int i) {
       value = i;
     }
 
@@ -43,11 +41,11 @@ public enum VipsInteresting {
         }
     }
 
-    public static VipsInteresting valueOf(unsigned int i) {
+    public static VipsInteresting valueOf(int i) {
         return (VipsInteresting) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

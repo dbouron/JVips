@@ -37,10 +37,10 @@ public enum VipsForeignHeifCompression {
     Av1(4),
     Last(5);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsForeignHeifCompression, Integer>();
 
-    private VipsForeignHeifCompression(unsigned int i) {
+    private VipsForeignHeifCompression(int i) {
       value = i;
     }
 
@@ -50,11 +50,11 @@ public enum VipsForeignHeifCompression {
         }
     }
 
-    public static VipsForeignHeifCompression valueOf(unsigned int i) {
+    public static VipsForeignHeifCompression valueOf(int i) {
         return (VipsForeignHeifCompression) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

@@ -39,10 +39,10 @@ public enum VipsSaveable {
     Any(5),
     Last(6);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsSaveable, Integer>();
 
-    private VipsSaveable(unsigned int i) {
+    private VipsSaveable(int i) {
       value = i;
     }
 
@@ -52,11 +52,11 @@ public enum VipsSaveable {
         }
     }
 
-    public static VipsSaveable valueOf(unsigned int i) {
+    public static VipsSaveable valueOf(int i) {
         return (VipsSaveable) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

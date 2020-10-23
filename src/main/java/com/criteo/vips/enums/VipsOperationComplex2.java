@@ -29,10 +29,10 @@ public enum VipsOperationComplex2 {
     CrossPhase(0),
     Last(1);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsOperationComplex2, Integer>();
 
-    private VipsOperationComplex2(unsigned int i) {
+    private VipsOperationComplex2(int i) {
       value = i;
     }
 
@@ -42,11 +42,11 @@ public enum VipsOperationComplex2 {
         }
     }
 
-    public static VipsOperationComplex2 valueOf(unsigned int i) {
+    public static VipsOperationComplex2 valueOf(int i) {
         return (VipsOperationComplex2) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

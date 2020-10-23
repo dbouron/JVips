@@ -39,10 +39,10 @@ public enum VipsForeignWebpPreset {
     Text(5),
     Last(6);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsForeignWebpPreset, Integer>();
 
-    private VipsForeignWebpPreset(unsigned int i) {
+    private VipsForeignWebpPreset(int i) {
       value = i;
     }
 
@@ -52,11 +52,11 @@ public enum VipsForeignWebpPreset {
         }
     }
 
-    public static VipsForeignWebpPreset valueOf(unsigned int i) {
+    public static VipsForeignWebpPreset valueOf(int i) {
         return (VipsForeignWebpPreset) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

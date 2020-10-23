@@ -26,10 +26,10 @@ public enum VipsForeignFlags {
     Sequential(4),
     All(7);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsForeignFlags, Integer>();
 
-    private VipsForeignFlags(unsigned int i) {
+    private VipsForeignFlags(int i) {
       value = i;
     }
 
@@ -39,11 +39,11 @@ public enum VipsForeignFlags {
         }
     }
 
-    public static VipsForeignFlags valueOf(unsigned int i) {
+    public static VipsForeignFlags valueOf(int i) {
         return (VipsForeignFlags) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

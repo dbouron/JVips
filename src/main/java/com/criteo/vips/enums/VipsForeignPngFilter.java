@@ -39,10 +39,10 @@ public enum VipsForeignPngFilter {
     Paeth(128),
     All(248);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsForeignPngFilter, Integer>();
 
-    private VipsForeignPngFilter(unsigned int i) {
+    private VipsForeignPngFilter(int i) {
       value = i;
     }
 
@@ -52,11 +52,11 @@ public enum VipsForeignPngFilter {
         }
     }
 
-    public static VipsForeignPngFilter valueOf(unsigned int i) {
+    public static VipsForeignPngFilter valueOf(int i) {
         return (VipsForeignPngFilter) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

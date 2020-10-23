@@ -24,10 +24,10 @@ public enum VipsFormatFlags {
     Partial(1),
     Bigendian(2);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsFormatFlags, Integer>();
 
-    private VipsFormatFlags(unsigned int i) {
+    private VipsFormatFlags(int i) {
       value = i;
     }
 
@@ -37,11 +37,11 @@ public enum VipsFormatFlags {
         }
     }
 
-    public static VipsFormatFlags valueOf(unsigned int i) {
+    public static VipsFormatFlags valueOf(int i) {
         return (VipsFormatFlags) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

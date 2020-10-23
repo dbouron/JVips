@@ -39,10 +39,10 @@ public enum VipsOperationRelational {
     Moreeq(5),
     Last(6);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsOperationRelational, Integer>();
 
-    private VipsOperationRelational(unsigned int i) {
+    private VipsOperationRelational(int i) {
       value = i;
     }
 
@@ -52,11 +52,11 @@ public enum VipsOperationRelational {
         }
     }
 
-    public static VipsOperationRelational valueOf(unsigned int i) {
+    public static VipsOperationRelational valueOf(int i) {
         return (VipsOperationRelational) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

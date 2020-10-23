@@ -31,10 +31,10 @@ public enum VipsCompassDirection {
     NorthWest(8),
     Last(9);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsCompassDirection, Integer>();
 
-    private VipsCompassDirection(unsigned int i) {
+    private VipsCompassDirection(int i) {
       value = i;
     }
 
@@ -44,11 +44,11 @@ public enum VipsCompassDirection {
         }
     }
 
-    public static VipsCompassDirection valueOf(unsigned int i) {
+    public static VipsCompassDirection valueOf(int i) {
         return (VipsCompassDirection) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

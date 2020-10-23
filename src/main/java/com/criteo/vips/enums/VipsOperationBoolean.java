@@ -37,10 +37,10 @@ public enum VipsOperationBoolean {
     Rshift(4),
     Last(5);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsOperationBoolean, Integer>();
 
-    private VipsOperationBoolean(unsigned int i) {
+    private VipsOperationBoolean(int i) {
       value = i;
     }
 
@@ -50,11 +50,11 @@ public enum VipsOperationBoolean {
         }
     }
 
-    public static VipsOperationBoolean valueOf(unsigned int i) {
+    public static VipsOperationBoolean valueOf(int i) {
         return (VipsOperationBoolean) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

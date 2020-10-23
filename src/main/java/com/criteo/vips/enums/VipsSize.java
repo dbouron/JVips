@@ -26,10 +26,10 @@ public enum VipsSize {
     Force(3),
     Last(4);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsSize, Integer>();
 
-    private VipsSize(unsigned int i) {
+    private VipsSize(int i) {
       value = i;
     }
 
@@ -39,11 +39,11 @@ public enum VipsSize {
         }
     }
 
-    public static VipsSize valueOf(unsigned int i) {
+    public static VipsSize valueOf(int i) {
         return (VipsSize) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

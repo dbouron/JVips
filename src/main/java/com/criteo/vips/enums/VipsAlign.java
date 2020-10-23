@@ -25,10 +25,10 @@ public enum VipsAlign {
     High(2),
     Last(3);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsAlign, Integer>();
 
-    private VipsAlign(unsigned int i) {
+    private VipsAlign(int i) {
       value = i;
     }
 
@@ -38,11 +38,11 @@ public enum VipsAlign {
         }
     }
 
-    public static VipsAlign valueOf(unsigned int i) {
+    public static VipsAlign valueOf(int i) {
         return (VipsAlign) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

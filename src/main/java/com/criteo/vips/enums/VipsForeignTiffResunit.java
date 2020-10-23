@@ -31,10 +31,10 @@ public enum VipsForeignTiffResunit {
     Inch(1),
     Last(2);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsForeignTiffResunit, Integer>();
 
-    private VipsForeignTiffResunit(unsigned int i) {
+    private VipsForeignTiffResunit(int i) {
       value = i;
     }
 
@@ -44,11 +44,11 @@ public enum VipsForeignTiffResunit {
         }
     }
 
-    public static VipsForeignTiffResunit valueOf(unsigned int i) {
+    public static VipsForeignTiffResunit valueOf(int i) {
         return (VipsForeignTiffResunit) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

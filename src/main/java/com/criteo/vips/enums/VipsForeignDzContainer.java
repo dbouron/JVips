@@ -33,10 +33,10 @@ public enum VipsForeignDzContainer {
     Szi(2),
     Last(3);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsForeignDzContainer, Integer>();
 
-    private VipsForeignDzContainer(unsigned int i) {
+    private VipsForeignDzContainer(int i) {
       value = i;
     }
 
@@ -46,11 +46,11 @@ public enum VipsForeignDzContainer {
         }
     }
 
-    public static VipsForeignDzContainer valueOf(unsigned int i) {
+    public static VipsForeignDzContainer valueOf(int i) {
         return (VipsForeignDzContainer) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

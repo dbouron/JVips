@@ -33,10 +33,10 @@ public enum VipsOperationRound {
     Floor(2),
     Last(3);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsOperationRound, Integer>();
 
-    private VipsOperationRound(unsigned int i) {
+    private VipsOperationRound(int i) {
       value = i;
     }
 
@@ -46,11 +46,11 @@ public enum VipsOperationRound {
         }
     }
 
-    public static VipsOperationRound valueOf(unsigned int i) {
+    public static VipsOperationRound valueOf(int i) {
         return (VipsOperationRound) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

@@ -28,10 +28,10 @@ public enum VipsKernel {
     Lanczos3(5),
     Last(6);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsKernel, Integer>();
 
-    private VipsKernel(unsigned int i) {
+    private VipsKernel(int i) {
       value = i;
     }
 
@@ -41,11 +41,11 @@ public enum VipsKernel {
         }
     }
 
-    public static VipsKernel valueOf(unsigned int i) {
+    public static VipsKernel valueOf(int i) {
         return (VipsKernel) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

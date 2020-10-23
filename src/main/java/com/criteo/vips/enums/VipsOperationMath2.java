@@ -31,10 +31,10 @@ public enum VipsOperationMath2 {
     Wop(1),
     Last(2);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsOperationMath2, Integer>();
 
-    private VipsOperationMath2(unsigned int i) {
+    private VipsOperationMath2(int i) {
       value = i;
     }
 
@@ -44,11 +44,11 @@ public enum VipsOperationMath2 {
         }
     }
 
-    public static VipsOperationMath2 valueOf(unsigned int i) {
+    public static VipsOperationMath2 valueOf(int i) {
         return (VipsOperationMath2) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

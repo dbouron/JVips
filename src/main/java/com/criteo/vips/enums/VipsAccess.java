@@ -25,10 +25,10 @@ public enum VipsAccess {
     SequentialUnbuffered(2),
     Last(3);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsAccess, Integer>();
 
-    private VipsAccess(unsigned int i) {
+    private VipsAccess(int i) {
       value = i;
     }
 
@@ -38,11 +38,11 @@ public enum VipsAccess {
         }
     }
 
-    public static VipsAccess valueOf(unsigned int i) {
+    public static VipsAccess valueOf(int i) {
         return (VipsAccess) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

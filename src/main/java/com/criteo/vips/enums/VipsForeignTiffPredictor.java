@@ -34,10 +34,10 @@ public enum VipsForeignTiffPredictor {
     Float(3),
     Last(4);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsForeignTiffPredictor, Integer>();
 
-    private VipsForeignTiffPredictor(unsigned int i) {
+    private VipsForeignTiffPredictor(int i) {
       value = i;
     }
 
@@ -47,11 +47,11 @@ public enum VipsForeignTiffPredictor {
         }
     }
 
-    public static VipsForeignTiffPredictor valueOf(unsigned int i) {
+    public static VipsForeignTiffPredictor valueOf(int i) {
         return (VipsForeignTiffPredictor) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

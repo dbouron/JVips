@@ -11,7 +11,6 @@ class EnumValue(object):
 class EnumDecl(object):
     def __init__(self, cursor):
         self.name = cursor.type.spelling
-        self.type = cursor.enum_type.spelling
         self.comment = cursor.raw_comment
         self.values = []
         for v in cursor.get_children():
@@ -24,7 +23,6 @@ class EnumDecl(object):
             index += 1
             for v in self.values:
                 if not v.java_name.startswith(ref[:-len(ref) + 1 + index]):
-                    print(f"{v.java_name} {ref[:-len(ref) + 1 + index]} {index}")
                     is_prefix = False
                     break
         # Remove prefix

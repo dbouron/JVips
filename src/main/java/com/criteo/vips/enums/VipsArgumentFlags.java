@@ -30,10 +30,10 @@ public enum VipsArgumentFlags {
     Deprecated(64),
     Modify(128);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsArgumentFlags, Integer>();
 
-    private VipsArgumentFlags(unsigned int i) {
+    private VipsArgumentFlags(int i) {
       value = i;
     }
 
@@ -43,11 +43,11 @@ public enum VipsArgumentFlags {
         }
     }
 
-    public static VipsArgumentFlags valueOf(unsigned int i) {
+    public static VipsArgumentFlags valueOf(int i) {
         return (VipsArgumentFlags) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

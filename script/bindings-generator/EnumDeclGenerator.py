@@ -27,6 +27,5 @@ class EnumDeclGenerator(object):
                         "license": LicenseProvider().get(),
                         "values": values,
                         "name": self.enum.name,
-                        "comment": comment,
-                        "type": self.enum.type})
+                        "comment": comment})
                 outfile.write(src)

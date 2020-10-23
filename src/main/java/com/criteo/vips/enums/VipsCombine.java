@@ -25,10 +25,10 @@ public enum VipsCombine {
     Min(2),
     Last(3);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsCombine, Integer>();
 
-    private VipsCombine(unsigned int i) {
+    private VipsCombine(int i) {
       value = i;
     }
 
@@ -38,11 +38,11 @@ public enum VipsCombine {
         }
     }
 
-    public static VipsCombine valueOf(unsigned int i) {
+    public static VipsCombine valueOf(int i) {
         return (VipsCombine) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

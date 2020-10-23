@@ -35,10 +35,10 @@ public enum VipsForeignDzLayout {
     Iiif(3),
     Last(4);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsForeignDzLayout, Integer>();
 
-    private VipsForeignDzLayout(unsigned int i) {
+    private VipsForeignDzLayout(int i) {
       value = i;
     }
 
@@ -48,11 +48,11 @@ public enum VipsForeignDzLayout {
         }
     }
 
-    public static VipsForeignDzLayout valueOf(unsigned int i) {
+    public static VipsForeignDzLayout valueOf(int i) {
         return (VipsForeignDzLayout) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

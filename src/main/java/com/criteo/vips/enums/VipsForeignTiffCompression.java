@@ -51,10 +51,10 @@ public enum VipsForeignTiffCompression {
     Zstd(7),
     Last(8);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsForeignTiffCompression, Integer>();
 
-    private VipsForeignTiffCompression(unsigned int i) {
+    private VipsForeignTiffCompression(int i) {
       value = i;
     }
 
@@ -64,11 +64,11 @@ public enum VipsForeignTiffCompression {
         }
     }
 
-    public static VipsForeignTiffCompression valueOf(unsigned int i) {
+    public static VipsForeignTiffCompression valueOf(int i) {
         return (VipsForeignTiffCompression) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

@@ -24,10 +24,10 @@ public enum VipsPCS {
     Xyz(1),
     Last(2);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsPCS, Integer>();
 
-    private VipsPCS(unsigned int i) {
+    private VipsPCS(int i) {
       value = i;
     }
 
@@ -37,11 +37,11 @@ public enum VipsPCS {
         }
     }
 
-    public static VipsPCS valueOf(unsigned int i) {
+    public static VipsPCS valueOf(int i) {
         return (VipsPCS) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

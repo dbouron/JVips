@@ -47,10 +47,10 @@ public enum VipsBlendMode {
     Exclusion(24),
     Last(25);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsBlendMode, Integer>();
 
-    private VipsBlendMode(unsigned int i) {
+    private VipsBlendMode(int i) {
       value = i;
     }
 
@@ -60,11 +60,11 @@ public enum VipsBlendMode {
         }
     }
 
-    public static VipsBlendMode valueOf(unsigned int i) {
+    public static VipsBlendMode valueOf(int i) {
         return (VipsBlendMode) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

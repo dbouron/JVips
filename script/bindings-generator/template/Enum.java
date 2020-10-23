@@ -8,10 +8,10 @@ import java.util.Map;
 public enum $name {
 $comment$values;
 
-    private $type value;
+    private int value;
     private static Map map = new HashMap<$name, Integer>();
 
-    private $name($type i) {
+    private $name(int i) {
       value = i;
     }
 
@@ -21,11 +21,11 @@ $comment$values;
         }
     }
 
-    public static $name valueOf($type i) {
+    public static $name valueOf(int i) {
         return ($name) map.get(i);
     }
 
-    public $type getValue() {
+    public int getValue() {
       return value;
     }
 }

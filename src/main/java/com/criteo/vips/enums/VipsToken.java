@@ -43,10 +43,10 @@ public enum VipsToken {
     Equals(4),
     Comma(5);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsToken, Integer>();
 
-    private VipsToken(unsigned int i) {
+    private VipsToken(int i) {
       value = i;
     }
 
@@ -56,11 +56,11 @@ public enum VipsToken {
         }
     }
 
-    public static VipsToken valueOf(unsigned int i) {
+    public static VipsToken valueOf(int i) {
         return (VipsToken) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

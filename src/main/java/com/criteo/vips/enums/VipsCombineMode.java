@@ -24,10 +24,10 @@ public enum VipsCombineMode {
     Add(1),
     Last(2);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsCombineMode, Integer>();
 
-    private VipsCombineMode(unsigned int i) {
+    private VipsCombineMode(int i) {
       value = i;
     }
 
@@ -37,11 +37,11 @@ public enum VipsCombineMode {
         }
     }
 
-    public static VipsCombineMode valueOf(unsigned int i) {
+    public static VipsCombineMode valueOf(int i) {
         return (VipsCombineMode) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

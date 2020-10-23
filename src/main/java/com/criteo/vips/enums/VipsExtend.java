@@ -28,10 +28,10 @@ public enum VipsExtend {
     Background(5),
     Last(6);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsExtend, Integer>();
 
-    private VipsExtend(unsigned int i) {
+    private VipsExtend(int i) {
       value = i;
     }
 
@@ -41,11 +41,11 @@ public enum VipsExtend {
         }
     }
 
-    public static VipsExtend valueOf(unsigned int i) {
+    public static VipsExtend valueOf(int i) {
         return (VipsExtend) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

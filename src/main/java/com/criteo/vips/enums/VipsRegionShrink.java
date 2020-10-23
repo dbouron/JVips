@@ -31,18 +31,12 @@ public enum VipsRegionShrink {
     Mean(0),
     Median(1),
     Mode(2),
-    // use the maximum
-    Max(3),
-    // use the minimum
-    Min(4),
-    // use the top-left pixel
-    Nearest(5),
-    Last(6);
+    Last(3);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsRegionShrink, Integer>();
 
-    private VipsRegionShrink(unsigned int i) {
+    private VipsRegionShrink(int i) {
       value = i;
     }
 
@@ -52,11 +46,11 @@ public enum VipsRegionShrink {
         }
     }
 
-    public static VipsRegionShrink valueOf(unsigned int i) {
+    public static VipsRegionShrink valueOf(int i) {
         return (VipsRegionShrink) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }

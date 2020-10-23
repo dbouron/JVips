@@ -24,10 +24,10 @@ public enum VipsOperationMorphology {
     Dilate(1),
     Last(2);
 
-    private unsigned int value;
+    private int value;
     private static Map map = new HashMap<VipsOperationMorphology, Integer>();
 
-    private VipsOperationMorphology(unsigned int i) {
+    private VipsOperationMorphology(int i) {
       value = i;
     }
 
@@ -37,11 +37,11 @@ public enum VipsOperationMorphology {
         }
     }
 
-    public static VipsOperationMorphology valueOf(unsigned int i) {
+    public static VipsOperationMorphology valueOf(int i) {
         return (VipsOperationMorphology) map.get(i);
     }
 
-    public unsigned int getValue() {
+    public int getValue() {
       return value;
     }
 }
