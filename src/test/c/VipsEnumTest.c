@@ -217,14 +217,6 @@ Java_com_criteo_vips_VipsEnumTest_TestNativeEnums(JNIEnv *env, jclass c)
     assertEqualsNativeEnumValue(env, VIPS_FOREIGN_HEIF_COMPRESSION_JPEG, "com/criteo/vips/enums/VipsForeignHeifCompression", "Jpeg");
     assertEqualsNativeEnumValue(env, VIPS_FOREIGN_HEIF_COMPRESSION_AV1, "com/criteo/vips/enums/VipsForeignHeifCompression", "Av1");
     assertEqualsNativeEnumValue(env, VIPS_FOREIGN_HEIF_COMPRESSION_LAST, "com/criteo/vips/enums/VipsForeignHeifCompression", "Last");
-    // VipsBBits
-    assertEqualsNativeEnumValue(env, IM_BBITS_BYTE, "com/criteo/vips/enums/VipsBBits", "Byte");
-    assertEqualsNativeEnumValue(env, IM_BBITS_SHORT, "com/criteo/vips/enums/VipsBBits", "Short");
-    assertEqualsNativeEnumValue(env, IM_BBITS_INT, "com/criteo/vips/enums/VipsBBits", "Int");
-    assertEqualsNativeEnumValue(env, IM_BBITS_FLOAT, "com/criteo/vips/enums/VipsBBits", "Float");
-    assertEqualsNativeEnumValue(env, IM_BBITS_COMPLEX, "com/criteo/vips/enums/VipsBBits", "Complex");
-    assertEqualsNativeEnumValue(env, IM_BBITS_DOUBLE, "com/criteo/vips/enums/VipsBBits", "Double");
-    assertEqualsNativeEnumValue(env, IM_BBITS_DPCOMPLEX, "com/criteo/vips/enums/VipsBBits", "Dpcomplex");
     // VipsPrecision
     assertEqualsNativeEnumValue(env, VIPS_PRECISION_INTEGER, "com/criteo/vips/enums/VipsPrecision", "Integer");
     assertEqualsNativeEnumValue(env, VIPS_PRECISION_FLOAT, "com/criteo/vips/enums/VipsPrecision", "Float");

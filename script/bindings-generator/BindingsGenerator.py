@@ -23,6 +23,11 @@ function_decl_filenames = {
     "vips-8.9.0/libvips/iofuncs/cache.c": "vips_cache_"
 }
 
+blacklisted_enums = [
+    # Deprecated
+    "VipsBBits"
+]
+
 generators = {}
 
 index = clang.cindex.Index.create()
@@ -37,7 +42,9 @@ def generate_enum(filename):
             continue
         if c.kind == CursorKind.ENUM_DECL:
             # Enum should start with "Vips" prefix
-            if not c.type.spelling.startswith("Vips"):
+            enum_name = c.type.spelling
+            if not enum_name.startswith(
+                    "Vips") or enum_name in blacklisted_enums:
                 continue
             enum = EnumDecl(c)
             enums[enum.name] = enum

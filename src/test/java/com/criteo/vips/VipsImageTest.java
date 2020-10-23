@@ -834,6 +834,20 @@ public class VipsImageTest {
     }
 
     @Test
+<<<<<<< HEAD
+=======
+    public void TestRemoveAutorotAngle() throws IOException, VipsException {
+        ByteBuffer buffer = VipsTestUtils.getDirectByteBuffer("exif_rotate_90_cw.jpg");
+
+        try (VipsImage img = new VipsImage(buffer, buffer.capacity())) {
+            assertEquals(VipsAngle.D90, img.getAutorotAngle());
+            img.removeAutorotAngle();
+            assertEquals(VipsAngle.D0, img.getAutorotAngle());
+        }
+    }
+
+    @Test
+>>>>>>> 🗑️ Remove deprecated enum
     public void TestExif90CWAutorot() throws IOException, VipsException {
         ByteBuffer buffer = VipsTestUtils.getDirectByteBuffer("exif_rotate_90_cw.jpg");
 
