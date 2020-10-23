@@ -9,6 +9,9 @@ from clang.cindex import TypeKind, CursorKind
 import re
 from Utils import to_pascal_case
 from FunctionDeclGenerator import FunctionDeclGenerator
+from EnumDecl import EnumDecl
+from EnumDeclGenerator import EnumDeclGenerator
+from EnumTestGenerator import EnumTestGenerator
 
 DEFAULT_VIPS_VERSION = "8.9.0"
 
@@ -25,7 +28,24 @@ generators = {}
 index = clang.cindex.Index.create()
 
 
-def parse_file(filename):
+def generate_enum(filename):
+    enums = {}
+    tu = index.parse(filename, args=["c", "-std=c99"])
+    for c in tu.cursor.get_children():
+        # Ignore references
+        if not c.location.file or c.location.file.name != filename:
+            continue
+        if c.kind == CursorKind.ENUM_DECL:
+            # Enum should start with "Vips" prefix
+            if not c.type.spelling.startswith("Vips"):
+                continue
+            enum = EnumDecl(c)
+            enums[enum.name] = enum
+            EnumDeclGenerator(enum).write_bindings()
+    return enums
+
+
+def generate_function(filename):
     tu = index.parse(filename, args=["c", "-std=c99"])
     for c in tu.cursor.get_children():
         # Ignore references
@@ -85,8 +105,12 @@ def main():
             tf.extractall()
 
     sources = traverse(f"vips-{version}/libvips")
+    enums = {}
     for src in sources:
-        parse_file(src)
+        enums.update(generate_enum(src))
+    EnumTestGenerator(enums).write_tests()
+    for src in sources:
+        generate_function(src)
 
 
 if __name__ == "__main__":
