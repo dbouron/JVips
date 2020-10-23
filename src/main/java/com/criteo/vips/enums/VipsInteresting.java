@@ -26,7 +26,8 @@ public enum VipsInteresting {
     Attention(3),
     Low(4),
     High(5),
-    Last(6);
+    All(6),
+    Last(7);
 
     private int value;
     private static Map map = new HashMap<VipsInteresting, Integer>();

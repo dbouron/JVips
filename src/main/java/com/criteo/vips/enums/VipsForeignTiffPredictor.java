@@ -21,7 +21,7 @@ import java.util.Map;
 
 public enum VipsForeignTiffPredictor {
     /**
-     * VipsForeignTiffPredictor:
+     * VipsForeignTiffPoor:
      * @VIPS_FOREIGN_TIFF_PREDICTOR_NONE: no prediction
      * @VIPS_FOREIGN_TIFF_PREDICTOR_HORIZONTAL: horizontal differencing
      * @VIPS_FOREIGN_TIFF_PREDICTOR_FLOAT: float predictor

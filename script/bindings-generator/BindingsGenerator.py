@@ -13,14 +13,14 @@ from EnumDecl import EnumDecl
 from EnumDeclGenerator import EnumDeclGenerator
 from EnumTestGenerator import EnumTestGenerator
 
-DEFAULT_VIPS_VERSION = "8.9.0"
+DEFAULT_VIPS_VERSION = "8.10.5"
 
 # Define all filenames where we want to genererate the bindings and their
 # function name's prefix
 function_decl_filenames = {
-    "vips-8.9.0/libvips/iofuncs/init.c": "vips_",
-    "vips-8.9.0/libvips/iofuncs/threadpool.c": "vips_concurrency_",
-    "vips-8.9.0/libvips/iofuncs/cache.c": "vips_cache_"
+    "vips-8.10.1/libvips/iofuncs/init.c": "vips_",
+    "vips-8.10.1/libvips/iofuncs/threadpool.c": "vips_concurrency_",
+    "vips-8.10.1/libvips/iofuncs/cache.c": "vips_cache_"
 }
 
 blacklisted_enums = [

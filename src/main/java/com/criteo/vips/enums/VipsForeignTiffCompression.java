@@ -35,7 +35,7 @@ public enum VipsForeignTiffCompression {
      *
      * Use @Q to set the jpeg compression level, default 75.
      *
-     * Use @prediction to set the lzw or deflate prediction, default none.
+     * Use @predictor to set the lzw or deflate prediction, default horizontal.
      *
      * Use @lossless to set WEBP lossless compression.
      *

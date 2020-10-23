@@ -25,13 +25,19 @@ public enum VipsRegionShrink {
      * @VIPS_REGION_SHRINK_MEAN: use the average
      * @VIPS_REGION_SHRINK_MEDIAN: use the median
      * @VIPS_REGION_SHRINK_MODE: use the mode
+     * @VIPS_REGION_SHRINK_MAX: use the maximum
+     * @VIPS_REGION_SHRINK_MIN: use the minimum
+     * @VIPS_REGION_SHRINK_NEAREST: use the top-left pixel
      *
      * How to calculate the output pixels when shrinking a 2x2 region.
      */
     Mean(0),
     Median(1),
     Mode(2),
-    Last(3);
+    Max(3),
+    Min(4),
+    Nearest(5),
+    Last(6);
 
     private int value;
     private static Map map = new HashMap<VipsRegionShrink, Integer>();

@@ -113,6 +113,7 @@ Java_com_criteo_vips_VipsEnumTest_TestNativeEnums(JNIEnv *env, jclass c)
     assertEqualsNativeEnumValue(env, VIPS_INTERESTING_ATTENTION, "com/criteo/vips/enums/VipsInteresting", "Attention");
     assertEqualsNativeEnumValue(env, VIPS_INTERESTING_LOW, "com/criteo/vips/enums/VipsInteresting", "Low");
     assertEqualsNativeEnumValue(env, VIPS_INTERESTING_HIGH, "com/criteo/vips/enums/VipsInteresting", "High");
+    assertEqualsNativeEnumValue(env, VIPS_INTERESTING_ALL, "com/criteo/vips/enums/VipsInteresting", "All");
     assertEqualsNativeEnumValue(env, VIPS_INTERESTING_LAST, "com/criteo/vips/enums/VipsInteresting", "Last");
     // VipsBlendMode
     assertEqualsNativeEnumValue(env, VIPS_BLEND_MODE_CLEAR, "com/criteo/vips/enums/VipsBlendMode", "Clear");
@@ -161,6 +162,11 @@ Java_com_criteo_vips_VipsEnumTest_TestNativeEnums(JNIEnv *env, jclass c)
     assertEqualsNativeEnumValue(env, VIPS_SAVEABLE_RGB_CMYK, "com/criteo/vips/enums/VipsSaveable", "RgbCmyk");
     assertEqualsNativeEnumValue(env, VIPS_SAVEABLE_ANY, "com/criteo/vips/enums/VipsSaveable", "Any");
     assertEqualsNativeEnumValue(env, VIPS_SAVEABLE_LAST, "com/criteo/vips/enums/VipsSaveable", "Last");
+    // VipsForeignJpegSubsample
+    assertEqualsNativeEnumValue(env, VIPS_FOREIGN_JPEG_SUBSAMPLE_AUTO, "com/criteo/vips/enums/VipsForeignJpegSubsample", "Auto");
+    assertEqualsNativeEnumValue(env, VIPS_FOREIGN_JPEG_SUBSAMPLE_ON, "com/criteo/vips/enums/VipsForeignJpegSubsample", "On");
+    assertEqualsNativeEnumValue(env, VIPS_FOREIGN_JPEG_SUBSAMPLE_OFF, "com/criteo/vips/enums/VipsForeignJpegSubsample", "Off");
+    assertEqualsNativeEnumValue(env, VIPS_FOREIGN_JPEG_SUBSAMPLE_LAST, "com/criteo/vips/enums/VipsForeignJpegSubsample", "Last");
     // VipsForeignWebpPreset
     assertEqualsNativeEnumValue(env, VIPS_FOREIGN_WEBP_PRESET_DEFAULT, "com/criteo/vips/enums/VipsForeignWebpPreset", "Default");
     assertEqualsNativeEnumValue(env, VIPS_FOREIGN_WEBP_PRESET_PICTURE, "com/criteo/vips/enums/VipsForeignWebpPreset", "Picture");
@@ -295,6 +301,9 @@ Java_com_criteo_vips_VipsEnumTest_TestNativeEnums(JNIEnv *env, jclass c)
     assertEqualsNativeEnumValue(env, VIPS_REGION_SHRINK_MEAN, "com/criteo/vips/enums/VipsRegionShrink", "Mean");
     assertEqualsNativeEnumValue(env, VIPS_REGION_SHRINK_MEDIAN, "com/criteo/vips/enums/VipsRegionShrink", "Median");
     assertEqualsNativeEnumValue(env, VIPS_REGION_SHRINK_MODE, "com/criteo/vips/enums/VipsRegionShrink", "Mode");
+    assertEqualsNativeEnumValue(env, VIPS_REGION_SHRINK_MAX, "com/criteo/vips/enums/VipsRegionShrink", "Max");
+    assertEqualsNativeEnumValue(env, VIPS_REGION_SHRINK_MIN, "com/criteo/vips/enums/VipsRegionShrink", "Min");
+    assertEqualsNativeEnumValue(env, VIPS_REGION_SHRINK_NEAREST, "com/criteo/vips/enums/VipsRegionShrink", "Nearest");
     assertEqualsNativeEnumValue(env, VIPS_REGION_SHRINK_LAST, "com/criteo/vips/enums/VipsRegionShrink", "Last");
     // VipsArgumentFlags
     assertEqualsNativeEnumValue(env, VIPS_ARGUMENT_NONE, "com/criteo/vips/enums/VipsArgumentFlags", "None");
