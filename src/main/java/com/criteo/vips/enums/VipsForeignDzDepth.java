@@ -1,9 +1,12 @@
 /*
   Copyright (c) 2020 Criteo
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
+
       http://www.apache.org/licenses/LICENSE-2.0
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,18 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum VipsForeignDzDepth {
-    // create layers down to 1x1 pixel
+    /**
+     * VipsForeignDzDepth:
+     * @VIPS_FOREIGN_DZ_DEPTH_ONEPIXEL: create layers down to 1x1 pixel
+     * @VIPS_FOREIGN_DZ_DEPTH_ONETILE: create layers down to 1x1 tile
+     * @VIPS_FOREIGN_DZ_DEPTH_ONE: only create a single layer
+     *
+     * How many pyramid layers to create.
+     */
     Onepixel(0),
-    // create layers down to 1x1 tile
     Onetile(1),
-    // only create a single layer
     One(2),
     Last(3);
 
-    private int value;
+    private unsigned int value;
     private static Map map = new HashMap<VipsForeignDzDepth, Integer>();
 
-    private VipsForeignDzDepth(int i) {
+    private VipsForeignDzDepth(unsigned int i) {
       value = i;
     }
 
@@ -38,11 +46,11 @@ public enum VipsForeignDzDepth {
         }
     }
 
-    public static VipsForeignDzDepth valueOf(int i) {
+    public static VipsForeignDzDepth valueOf(unsigned int i) {
         return (VipsForeignDzDepth) map.get(i);
     }
 
-    public int getValue() {
+    public unsigned int getValue() {
       return value;
     }
 }

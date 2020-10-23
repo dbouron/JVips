@@ -1,9 +1,12 @@
 /*
   Copyright (c) 2020 Criteo
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
+
       http://www.apache.org/licenses/LICENSE-2.0
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,23 +20,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum VipsOperationRelational {
-    // ==
+    /** 
+     * VipsOperationRelational:
+     * @VIPS_OPERATION_RELATIONAL_EQUAL: ==
+     * @VIPS_OPERATION_RELATIONAL_NOTEQ: !=
+     * @VIPS_OPERATION_RELATIONAL_LESS: <
+     * @VIPS_OPERATION_RELATIONAL_LESSEQ: <=
+     * @VIPS_OPERATION_RELATIONAL_MORE: >
+     * @VIPS_OPERATION_RELATIONAL_MOREEQ: >=
+     *
+     * See also: vips_relational().
+     */
     Equal(0),
-    // !=
     Noteq(1),
-    // <
     Less(2),
-    // <=
     Lesseq(3),
     More(4),
-    // =
     Moreeq(5),
     Last(6);
 
-    private int value;
+    private unsigned int value;
     private static Map map = new HashMap<VipsOperationRelational, Integer>();
 
-    private VipsOperationRelational(int i) {
+    private VipsOperationRelational(unsigned int i) {
       value = i;
     }
 
@@ -43,11 +52,11 @@ public enum VipsOperationRelational {
         }
     }
 
-    public static VipsOperationRelational valueOf(int i) {
+    public static VipsOperationRelational valueOf(unsigned int i) {
         return (VipsOperationRelational) map.get(i);
     }
 
-    public int getValue() {
+    public unsigned int getValue() {
       return value;
     }
 }

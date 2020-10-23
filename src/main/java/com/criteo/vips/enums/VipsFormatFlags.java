@@ -19,35 +19,29 @@ package com.criteo.vips.enums;
 import java.util.HashMap;
 import java.util.Map;
 
-public enum VipsImageType {
-    Error(-1),
+public enum VipsFormatFlags {
     None(0),
-    Setbuf(1),
-    SetbufForeign(2),
-    Openin(3),
-    Mmapin(4),
-    Mmapinrw(5),
-    Openout(6),
-    Partial(7);
+    Partial(1),
+    Bigendian(2);
 
-    private int value;
-    private static Map map = new HashMap<VipsImageType, Integer>();
+    private unsigned int value;
+    private static Map map = new HashMap<VipsFormatFlags, Integer>();
 
-    private VipsImageType(int i) {
+    private VipsFormatFlags(unsigned int i) {
       value = i;
     }
 
     static {
-        for (VipsImageType e : VipsImageType.values()) {
+        for (VipsFormatFlags e : VipsFormatFlags.values()) {
             map.put(e.value, e);
         }
     }
 
-    public static VipsImageType valueOf(int i) {
-        return (VipsImageType) map.get(i);
+    public static VipsFormatFlags valueOf(unsigned int i) {
+        return (VipsFormatFlags) map.get(i);
     }
 
-    public int getValue() {
+    public unsigned int getValue() {
       return value;
     }
 }

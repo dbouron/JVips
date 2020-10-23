@@ -1,9 +1,12 @@
 /*
   Copyright (c) 2020 Criteo
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
+
       http://www.apache.org/licenses/LICENSE-2.0
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,28 +20,41 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum VipsForeignTiffCompression {
-    // no compression
+    /**
+     * VipsForeignTiffCompression:
+     * @VIPS_FOREIGN_TIFF_COMPRESSION_NONE: no compression
+     * @VIPS_FOREIGN_TIFF_COMPRESSION_JPEG: jpeg compression
+     * @VIPS_FOREIGN_TIFF_COMPRESSION_DEFLATE: deflate (zip) compression
+     * @VIPS_FOREIGN_TIFF_COMPRESSION_PACKBITS: packbits compression
+     * @VIPS_FOREIGN_TIFF_COMPRESSION_CCITTFAX4: fax4 compression
+     * @VIPS_FOREIGN_TIFF_COMPRESSION_LZW: LZW compression
+     * @VIPS_FOREIGN_TIFF_COMPRESSION_WEBP: WEBP compression
+     * @VIPS_FOREIGN_TIFF_COMPRESSION_ZSTD: ZSTD compression
+     *
+     * The compression types supported by the tiff writer.
+     *
+     * Use @Q to set the jpeg compression level, default 75.
+     *
+     * Use @prediction to set the lzw or deflate prediction, default none.
+     *
+     * Use @lossless to set WEBP lossless compression.
+     *
+     * Use @level to set webp and zstd compression level.
+     */
     None(0),
-    // jpeg compression
     Jpeg(1),
-    // deflate (zip) compression
     Deflate(2),
-    // packbits compression
     Packbits(3),
-    // fax4 compression
     Ccittfax4(4),
-    // LZW compression
     Lzw(5),
-    // WEBP compression
     Webp(6),
-    // ZSTD compression
     Zstd(7),
     Last(8);
 
-    private int value;
+    private unsigned int value;
     private static Map map = new HashMap<VipsForeignTiffCompression, Integer>();
 
-    private VipsForeignTiffCompression(int i) {
+    private VipsForeignTiffCompression(unsigned int i) {
       value = i;
     }
 
@@ -48,11 +64,11 @@ public enum VipsForeignTiffCompression {
         }
     }
 
-    public static VipsForeignTiffCompression valueOf(int i) {
+    public static VipsForeignTiffCompression valueOf(unsigned int i) {
         return (VipsForeignTiffCompression) map.get(i);
     }
 
-    public int getValue() {
+    public unsigned int getValue() {
       return value;
     }
 }

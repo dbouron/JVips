@@ -1,9 +1,12 @@
 /*
   Copyright (c) 2020 Criteo
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
+
       http://www.apache.org/licenses/LICENSE-2.0
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,16 +20,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum VipsOperationMath2 {
-    // pow( left, right )
+    /** 
+     * VipsOperationMath2:
+     * @VIPS_OPERATION_MATH2_POW: pow( left, right )
+     * @VIPS_OPERATION_MATH2_WOP: pow( right, left ) 
+     *
+     * See also: vips_math().
+     */
     Pow(0),
-    // pow( right, left ) 
     Wop(1),
     Last(2);
 
-    private int value;
+    private unsigned int value;
     private static Map map = new HashMap<VipsOperationMath2, Integer>();
 
-    private VipsOperationMath2(int i) {
+    private VipsOperationMath2(unsigned int i) {
       value = i;
     }
 
@@ -36,11 +44,11 @@ public enum VipsOperationMath2 {
         }
     }
 
-    public static VipsOperationMath2 valueOf(int i) {
+    public static VipsOperationMath2 valueOf(unsigned int i) {
         return (VipsOperationMath2) map.get(i);
     }
 
-    public int getValue() {
+    public unsigned int getValue() {
       return value;
     }
 }

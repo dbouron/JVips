@@ -1,9 +1,12 @@
 /*
   Copyright (c) 2020 Criteo
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
+
       http://www.apache.org/licenses/LICENSE-2.0
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,21 +20,33 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum VipsToken {
-    // left bracket
+    /** 
+     * VipsToken:
+     * @VIPS_TOKEN_LEFT: left bracket
+     * @VIPS_TOKEN_RIGHT: right bracket
+     * @VIPS_TOKEN_STRING: string constant
+     * @VIPS_TOKEN_EQUALS: equals sign
+     * @VIPS_TOKEN_COMMA: comma
+     *
+     * Tokens returned by the vips lexical analyzer, see vips__token_get(). This
+     * is used to parse option strings for arguments. 
+     *
+     * Left and right brackets can be any of (, {, [, <.
+     *
+     * Strings may be in double quotes, and may contain escaped quote characters,
+     * for example string, "string" and "str\"ing".
+     *
+     */
     Left(1),
-    // right bracket
     Right(2),
-    // string constant
     String(3),
-    // equals sign
     Equals(4),
-    // comma
     Comma(5);
 
-    private int value;
+    private unsigned int value;
     private static Map map = new HashMap<VipsToken, Integer>();
 
-    private VipsToken(int i) {
+    private VipsToken(unsigned int i) {
       value = i;
     }
 
@@ -41,11 +56,11 @@ public enum VipsToken {
         }
     }
 
-    public static VipsToken valueOf(int i) {
+    public static VipsToken valueOf(unsigned int i) {
         return (VipsToken) map.get(i);
     }
 
-    public int getValue() {
+    public unsigned int getValue() {
       return value;
     }
 }

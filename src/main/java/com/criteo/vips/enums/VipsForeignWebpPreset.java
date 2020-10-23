@@ -1,9 +1,12 @@
 /*
   Copyright (c) 2020 Criteo
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
+
       http://www.apache.org/licenses/LICENSE-2.0
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,24 +20,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum VipsForeignWebpPreset {
-    // default preset
+    /**
+     * VipsForeignWebpPreset:
+     * @VIPS_FOREIGN_WEBP_PRESET_DEFAULT: default preset
+     * @VIPS_FOREIGN_WEBP_PRESET_PICTURE: digital picture, like portrait, inner shot
+     * @VIPS_FOREIGN_WEBP_PRESET_PHOTO: outdoor photograph, with natural lighting
+     * @VIPS_FOREIGN_WEBP_PRESET_DRAWING: hand or line drawing, with high-contrast details
+     * @VIPS_FOREIGN_WEBP_PRESET_ICON: small-sized colorful images
+     * @VIPS_FOREIGN_WEBP_PRESET_TEXT: text-like
+     *
+     * Tune lossy encoder settings for different image types.
+     */
     Default(0),
-    // digital picture, like portrait, inner shot
     Picture(1),
-    // outdoor photograph, with natural lighting
     Photo(2),
-    // hand or line drawing, with high-contrast details
     Drawing(3),
-    // small-sized colorful images
     Icon(4),
-    // text-like
     Text(5),
     Last(6);
 
-    private int value;
+    private unsigned int value;
     private static Map map = new HashMap<VipsForeignWebpPreset, Integer>();
 
-    private VipsForeignWebpPreset(int i) {
+    private VipsForeignWebpPreset(unsigned int i) {
       value = i;
     }
 
@@ -44,11 +52,11 @@ public enum VipsForeignWebpPreset {
         }
     }
 
-    public static VipsForeignWebpPreset valueOf(int i) {
+    public static VipsForeignWebpPreset valueOf(unsigned int i) {
         return (VipsForeignWebpPreset) map.get(i);
     }
 
-    public int getValue() {
+    public unsigned int getValue() {
       return value;
     }
 }

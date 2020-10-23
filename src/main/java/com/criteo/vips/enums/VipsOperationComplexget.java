@@ -1,9 +1,12 @@
 /*
   Copyright (c) 2020 Criteo
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
+
       http://www.apache.org/licenses/LICENSE-2.0
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,16 +20,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum VipsOperationComplexget {
-    // get real component
+    /** 
+     * VipsOperationComplexget:
+     * @VIPS_OPERATION_COMPLEXGET_REAL: get real component
+     * @VIPS_OPERATION_COMPLEXGET_IMAG: get imaginary component
+     *
+     * See also: vips_complexget().
+     */
     Real(0),
-    // get imaginary component
     Imag(1),
     Last(2);
 
-    private int value;
+    private unsigned int value;
     private static Map map = new HashMap<VipsOperationComplexget, Integer>();
 
-    private VipsOperationComplexget(int i) {
+    private VipsOperationComplexget(unsigned int i) {
       value = i;
     }
 
@@ -36,11 +44,11 @@ public enum VipsOperationComplexget {
         }
     }
 
-    public static VipsOperationComplexget valueOf(int i) {
+    public static VipsOperationComplexget valueOf(unsigned int i) {
         return (VipsOperationComplexget) map.get(i);
     }
 
-    public int getValue() {
+    public unsigned int getValue() {
       return value;
     }
 }

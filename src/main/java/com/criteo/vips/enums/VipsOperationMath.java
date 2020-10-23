@@ -1,9 +1,12 @@
 /*
   Copyright (c) 2020 Criteo
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
+
       http://www.apache.org/licenses/LICENSE-2.0
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,32 +20,37 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum VipsOperationMath {
-    // sin(), angles in degrees
+    /** 
+     * VipsOperationMath:
+     * @VIPS_OPERATION_MATH_SIN: sin(), angles in degrees
+     * @VIPS_OPERATION_MATH_COS: cos(), angles in degrees
+     * @VIPS_OPERATION_MATH_TAN: tan(), angles in degrees
+     * @VIPS_OPERATION_MATH_ASIN: asin(), angles in degrees
+     * @VIPS_OPERATION_MATH_ACOS: acos(), angles in degrees
+     * @VIPS_OPERATION_MATH_ATAN: atan(), angles in degrees
+     * @VIPS_OPERATION_MATH_LOG: log base e 
+     * @VIPS_OPERATION_MATH_LOG10: log base 10 
+     * @VIPS_OPERATION_MATH_EXP: e to the something
+     * @VIPS_OPERATION_MATH_EXP10: 10 to the something
+     *
+     * See also: vips_math().
+     */
     Sin(0),
-    // cos(), angles in degrees
     Cos(1),
-    // tan(), angles in degrees
     Tan(2),
-    // asin(), angles in degrees
     Asin(3),
-    // acos(), angles in degrees
     Acos(4),
-    // atan(), angles in degrees
     Atan(5),
-    // log base e 
     Log(6),
-    // log base 10 
     Log10(7),
-    // e to the something
     Exp(8),
-    // 10 to the something
     Exp10(9),
     Last(10);
 
-    private int value;
+    private unsigned int value;
     private static Map map = new HashMap<VipsOperationMath, Integer>();
 
-    private VipsOperationMath(int i) {
+    private VipsOperationMath(unsigned int i) {
       value = i;
     }
 
@@ -52,11 +60,11 @@ public enum VipsOperationMath {
         }
     }
 
-    public static VipsOperationMath valueOf(int i) {
+    public static VipsOperationMath valueOf(unsigned int i) {
         return (VipsOperationMath) map.get(i);
     }
 
-    public int getValue() {
+    public unsigned int getValue() {
       return value;
     }
 }
